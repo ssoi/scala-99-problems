@@ -20,4 +20,15 @@ object ListSolutions {
 
     penultimateHelper(input.head, input.tail)
   }
+
+  def kth[A](input: List[A], k: Int): A = {
+	  def kthHelper[A](index: Int, k: Int, remaining: List[A]): A = {
+	    index == k match {
+	      case true => remaining.head
+	      case _ => kthHelper(index + 1, k, remaining.tail)
+	    }
+	  }
+
+    kthHelper(0, k, input)
+  }
 }

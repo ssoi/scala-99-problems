@@ -15,4 +15,11 @@ class SolutionsSpec extends FunSuite {
 
     assert(result == expected)
   }
+
+  test("P03: Kth element of a list") {
+    val expected = 4 
+    val result = ListSolutions.kth(List[Int](1, 2, 3, 4, 5), 3)
+
+    assert(result == expected)
+  }
 }
