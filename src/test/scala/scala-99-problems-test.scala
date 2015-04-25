@@ -22,4 +22,11 @@ class SolutionsSpec extends FunSuite {
 
     assert(result == expected)
   }
+
+  test("P04: Length of a list") {
+    val expected = 4 
+    val result = ListSolutions.length(List[Int](1, 2, 3, 4, 5))
+
+    assert(result == expected)
+  }
 }

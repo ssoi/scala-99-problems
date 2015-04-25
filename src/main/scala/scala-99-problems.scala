@@ -31,4 +31,15 @@ object ListSolutions {
 
     kthHelper(0, k, input)
   }
+
+  def length[A](input: List[A]): Int = {
+	  def lengthHelper[A](counter: Int, remaining: List[A]): Int = {
+	    remaining.tail.isEmpty match {
+	      case true => counter
+	      case _ => lengthHelper(counter + 1, remaining.tail)
+	    }
+	  }
+
+    lengthHelper(0, input)
+  }
 }
