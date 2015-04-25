@@ -1,6 +1,6 @@
 package com.sameersoi.scala99problems
 
-object problem_01 {
+object ListSolutions {
   def last[A](input: List[A]): A = {
     input.length match {
       case 1 =>
