@@ -11,6 +11,7 @@ object ListSolutions {
   }
 
   def penultimate[A](input: List[A]): A = {
+    @tailrec
 	  def penultimateHelper[A](prev: A, remaining: List[A]): A = {
 	    remaining.tail.isEmpty match {
 	      case true => prev
@@ -22,6 +23,7 @@ object ListSolutions {
   }
 
   def kth[A](input: List[A], k: Int): A = {
+    @tailrec
 	  def kthHelper[A](index: Int, k: Int, remaining: List[A]): A = {
 	    index == k match {
 	      case true => remaining.head
@@ -33,6 +35,7 @@ object ListSolutions {
   }
 
   def length[A](input: List[A]): Int = {
+    @tailrec
 	  def lengthHelper[A](counter: Int, remaining: List[A]): Int = {
 	    remaining.tail.isEmpty match {
 	      case true => counter
@@ -41,5 +44,11 @@ object ListSolutions {
 	  }
 
     lengthHelper(0, input)
+  }
+
+  def reverse[A](input: List[A]): List[A] = {
+    input.foldLeft(List[A]()) { (acc, elem) =>
+      elem :: acc
+    }
   }
 }

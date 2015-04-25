@@ -29,4 +29,11 @@ class SolutionsSpec extends FunSuite {
 
     assert(result == expected)
   }
+
+  test("P05: Reverse a list") {
+    val expected = List[Int](5, 4, 3, 2, 1)
+    val result = ListSolutions.reverse(List[Int](1, 2, 3, 4, 5))
+
+    assert(result == expected)
+  }
 }
