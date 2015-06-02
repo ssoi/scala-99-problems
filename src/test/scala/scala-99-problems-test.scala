@@ -36,4 +36,12 @@ class SolutionsSpec extends FunSuite {
 
     assert(result == expected)
   }
+
+  test("P06: Determine if a list is a palindrome") {
+    val expectedPalindrome = List[Int](1, 2, 3, 2, 1)
+    val expectedNotPalindrome = List[Int](1, 2, 3, 3, 1)
+
+    assert(ListSolutions.isPalindrome(expectedPalindrome))
+    assert(!ListSolutions.isPalindrome(expectedNotPalindrome))
+  }
 }

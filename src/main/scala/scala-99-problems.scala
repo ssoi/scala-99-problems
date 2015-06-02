@@ -51,4 +51,8 @@ object ListSolutions {
       elem :: acc
     }
   }
+
+  def isPalindrome[A](input: List[A]): Boolean = {
+    input == input.reverse 
+  }
 }
