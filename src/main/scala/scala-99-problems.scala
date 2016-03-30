@@ -55,4 +55,19 @@ object ListSolutions {
   def isPalindrome[A](input: List[A]): Boolean = {
     input == input.reverse 
   }
+
+  def flatten(input: List[Any]): List[Any] = {
+    def flattenHelper(input: List[Any]): List[Any] = {
+      input.foldLeft(List[Any]()) { (acc, elem) =>
+        elem match {
+          case elem: List[Any] =>
+            flattenHelper(elem) ::: acc
+          case _ =>
+            elem :: acc
+        }
+      }
+    }
+
+    flattenHelper(input).reverse
+  }
 }

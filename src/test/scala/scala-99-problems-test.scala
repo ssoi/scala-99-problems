@@ -44,4 +44,11 @@ class SolutionsSpec extends FunSuite {
     assert(ListSolutions.isPalindrome(expectedPalindrome))
     assert(!ListSolutions.isPalindrome(expectedNotPalindrome))
   }
+
+  test("P07: Flatten a nested list structure") {
+    val expected: List[Any] = List(1, 1, 2, 3, 5, 8)
+    val result = ListSolutions.flatten(List(List(1, 1), 2, List(3, List(5, 8))))
+
+    assert(result == expected)
+  }
 }
