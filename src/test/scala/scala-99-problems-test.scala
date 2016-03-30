@@ -51,4 +51,11 @@ class SolutionsSpec extends FunSuite {
 
     assert(result == expected)
   }
+
+  test("P08: Eliminate consecutive duplicates of list elements") {
+    val expected: List[Symbol] =  List('a, 'b, 'c, 'a, 'd, 'e)
+    val result = ListSolutions.compress(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
+
+    assert(result == expected)
+  }
 }

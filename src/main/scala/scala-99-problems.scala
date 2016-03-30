@@ -70,4 +70,18 @@ object ListSolutions {
 
     flattenHelper(input).reverse
   }
+
+  def compress(input: List[Symbol]): List[Symbol] = {
+    def compressHelper(input: List[Symbol], acc: List[Symbol]): List[Symbol] = {
+      if (input.isEmpty)
+        acc
+      else
+        if (input.head == acc.head)
+          compressHelper(input.tail, acc)
+        else
+          compressHelper(input.tail, input.head::acc)
+    }
+
+    compressHelper(input.tail, List[Symbol](input.head)).reverse
+  }
 }
