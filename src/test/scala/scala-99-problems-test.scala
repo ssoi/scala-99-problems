@@ -58,4 +58,11 @@ class SolutionsSpec extends FunSuite {
 
     assert(result == expected)
   }
+
+  test("P09: Pack consecutive duplicates of list elements into sublists") {
+    val expected: List[List[Symbol]] = List(List('a, 'a, 'a, 'a), List('b), List('c, 'c), List('a, 'a), List('d), List('e, 'e, 'e, 'e))
+    val result = ListSolutions.pack(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
+
+    assert(result == expected)
+  }
 }

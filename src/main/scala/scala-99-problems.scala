@@ -84,4 +84,24 @@ object ListSolutions {
 
     compressHelper(input.tail, List[Symbol](input.head)).reverse
   }
+
+  def pack(input: List[Symbol]): List[List[Symbol]] = {
+    def packHelper(input: List[Symbol],
+                   last: Option[Symbol],
+                   acc: List[List[Symbol]]): List[List[Symbol]] = {
+
+      if (input.isEmpty)
+        acc
+      else
+        if (last.isEmpty)
+          packHelper(input.tail, Some(input.head), List[Symbol](input.head) :: acc)
+        else
+          if (input.head == last.get)
+            packHelper(input.tail, Some(input.head), (input.head :: acc.head) :: acc.tail)
+          else
+            packHelper(input.tail, Some(input.head), List[Symbol](input.head) :: acc)
+    }
+
+    packHelper(input, None, List[List[Symbol]]()).reverse
+  }
 }
