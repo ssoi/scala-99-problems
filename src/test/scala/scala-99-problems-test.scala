@@ -65,4 +65,39 @@ class SolutionsSpec extends FunSuite {
 
     assert(result == expected)
   }
+
+  test("P10: Run-length encoding of a list") {
+    val expected: List[(Int, Symbol)] = List((4,'a), (1,'b), (2,'c), (2,'a), (1,'d), (4,'e))
+    val result = ListSolutions.encode(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
+
+    assert(result == expected)
+  }
+
+  test("P11: Modified run-length encoding") {
+    val expected: List[Any] = List((4,'a), 'b, (2,'c), (2,'a), 'd, (4,'e))
+    val result = ListSolutions.encodeModified(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
+
+    assert(result == expected)
+  }
+
+  test("P12: Decode a run-length encoded list") {
+    val expected: List[Symbol] = List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e)
+    val result = ListSolutions.decode(List((4, 'a), (1, 'b), (2, 'c), (2, 'a), (1, 'd), (4, 'e)))
+
+    assert(result == expected)
+  }
+
+  test("P13: Run-length encoding of a list (direct solution)") {
+    val expected: List[(Int, Symbol)] = List((4,'a), (1,'b), (2,'c), (2,'a), (1,'d), (4,'e))
+    val result = ListSolutions.encodeDirect(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
+
+    assert(result == expected)
+  }
+
+  test("P14: Duplicate the elements of a list") {
+    val expected: List[Symbol] = List('a, 'a, 'b, 'b, 'c, 'c, 'c, 'c, 'd, 'd)
+    val result = ListSolutions.duplicate(List('a, 'b, 'c, 'c, 'd))
+
+    assert(result == expected)
+  }
 }
